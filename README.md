@@ -128,10 +128,20 @@ chmod +x ./scripts/*.sh
 
 The script will generate unique identifiers to prevent conflicts and attempt to install the profile.
 
+To delay major updates 90 days and minor updates 30 days, 
+
 ```bash
-./scripts/install-profile.sh profiles/deferral-90days.mobileconfig
+./scripts/install-profile.sh profiles/deferral-major-90days-minor-30days.mobileconfig
 
 ```
+
+Or to delay only major updates 90 days and allow minor upates to occur as usual,
+
+```bash
+./scripts/install-profile.sh profiles/deferral-major-90days-only.mobileconfig
+
+```
+
 
 > [!NOTE]
 > On recent macOS versions, silent installation may be blocked. If the script opens **System Settings**, please locate the **"Profiles"** (or "Downloaded Profile") notification and click **Install** manually to complete the process.
