@@ -1,5 +1,7 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/sh
+
+set -eu
+
 echo "macOS: $(sw_vers -productVersion)"
 echo "Profiles matching 'Software Update' deferrals:"
 /usr/bin/profiles show -type configuration 2>/dev/null | \

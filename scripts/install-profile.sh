@@ -1,8 +1,10 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/sh
+
+set -eu
+
 PROFILE="${1:-profiles/deferral-90days.mobileconfig}"
 
-if [[ ! -f "$PROFILE" ]]; then
+if [ ! -f "$PROFILE" ]; then
   echo "Profile not found: $PROFILE" >&2
   exit 1
 fi
@@ -13,8 +15,8 @@ UUID2=$(uuidgen)
 
 # Create profile with UUIDs inserted
 TEMP_DIR=$(mktemp -d)
-TEMP_PROFILE="$TEMP_DIR/profile.mobileconfig"
 trap 'rm -rf "$TEMP_DIR"' EXIT
+TEMP_PROFILE="$TEMP_DIR/profile.mobileconfig"
 sed -e "s/PAYLOAD-UUID/$UUID1/" -e "s/PROFILE-UUID/$UUID2/" "$PROFILE" > "$TEMP_PROFILE"
 
 echo "Installing profile: $PROFILE"
@@ -28,5 +30,6 @@ else
   echo "Opening profile in System Settings for manual approval..."
   open "$TEMP_PROFILE"
   echo "Press Enter after you've approved (or declined) the profile in System Settings."
-  read -r
+  # shellcheck disable=SC2034 suppress "unused variable" message.
+  read -r junk
 fi
