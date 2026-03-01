@@ -1,6 +1,6 @@
 # 🛑 Stop Tahoe Update
 
-_A community-led effort to block unwanted macOS upgrades (e.g. Sequoia → Tahoe)._
+_A community-led effort to block unwanted macOS upgrades (e.g. Sequoia  → Tahoe, macOS 15  → macOS 26)._
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-blue.svg)](.github/CONTRIBUTING.md)
