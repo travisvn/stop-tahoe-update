@@ -42,11 +42,6 @@ git clone https://github.com/travisvn/stop-tahoe-update.git
 cd stop-tahoe-update
 ```
 
-Ensure the scripts are executable:
-```bash
-chmod +x ./scripts/*.sh
-```
-
 ### 2. Apply the 90-day deferral profile
 
 The script will generate unique identifiers to prevent conflicts and attempt to install the profile.
